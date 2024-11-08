@@ -1,0 +1,29 @@
+.best__members {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.best__member {
+  margin-bottom: 30px;
+}
+.best__img {
+}
+.best__text {
+}
+.best__info {
+  margin-bottom: 15px;
+}
+.best__info span {
+  font-weight: 700;
+}
+.best__work {
+  margin-bottom: 15px;
+}
+.best__work span {
+  font-weight: 700;
+}
+.best__btn {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 10px;
+}
