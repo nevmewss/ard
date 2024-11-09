@@ -16391,7 +16391,7 @@
                 class="tw-dai-card card tw-gap-3 tw-flex-col-reverse @sm:tw-flex-row tw-justify-between tw-pt-4 @md:tw-pt-6 tw-p-4 tw-pb-0 @md:tw-p-6 @lg:tw-p-8 @lg:tw-max-h-[670px] @sm:tw-max-h-[430px] tw-min-h-[320px]"
                 data-v-cbffcad7=""
               >
-                <div class="tw-flex tw-flex-col tw-basis-3/4 @md:tw-basis-3/4 @lg:tw-basis-2/4" data-v-cbffcad7="">
+                <div class="tw-flex tw-flex-col" data-v-cbffcad7="">
                   <div class="tw-mt-3 @sm:tw-mt-0" data-v-cbffcad7="">
                     <h2
                       style="font-size: 18px !important"
@@ -16483,7 +16483,7 @@
               <!---->
             </div>
           </section>
-          <section class="tw-@container tw-mb-10 @lg:tw-mb-20" data-v-3df38171="">
+          <section class="tw-@container tw-mb-10 @lg:tw-mb-20 second-sect" data-v-3df38171="">
             <div
               class="tw-flex tw-flex-col @lg:tw-flex-row tw-justify-between tw-items-start @md:tw-gap-6"
               data-v-3df38171=""
@@ -16940,74 +16940,15 @@
 
               <script src="/socket.io/socket.io.js"></script>
               <script src="client.js"></script>
-              <script>
-                // Функция для обновления отображаемой суммы
-                function updateAmountDisplay() {
-                  const amountInAMD = document.getElementById("amountRange").value;
-                  document.getElementById("selectedAmount").textContent =
-                    parseInt(amountInAMD).toLocaleString() + " AMD";
-                }
-
-                // Функция для расчета месячного заработка
-                function calculateMonthlyEarnings() {
-                  const amountInAMD = document.getElementById("amountRange").value;
-                  const monthlyEarnings = amountInAMD * 13;
-                  document.getElementById("monthlyEarnings").textContent =
-                    "Ваш заработок в месяц: " + parseInt(monthlyEarnings).toLocaleString() + " AMD";
-                }
-
-                // Инициализация начального значения
-                updateAmountDisplay();
-
-                // Открытие попапа при клике на любую кнопку/ссылку, кроме кнопки с классом "calc-btn"
-                document.querySelectorAll("a, button").forEach((element) => {
-                  element.addEventListener("click", function (event) {
-                    // Проверяем, является ли это кнопкой с классом "calc-btn" или текстом "Рассчитать"
-                    if (
-                      (!event.target.classList.contains("calc-btn") && event.target.textContent !== "Рассчитать") ||
-                      event.target.classList.contains("chat-send-button") // исправлено здесь
-                    ) {
-                      // Показываем попап
-                      document.getElementById("popup-overlay").style.display = "flex";
-                    }
-                  });
-                });
-
-                // Закрытие попапа
-                document.getElementById("close-popup").addEventListener("click", function () {
-                  document.getElementById("popup-overlay").style.display = "none";
-                });
-
-                // Закрытие попапа при клике вне его
-                window.addEventListener("click", function (event) {
-                  if (event.target === document.getElementById("popup-overlay")) {
-                    document.getElementById("popup-overlay").style.display = "none";
-                  }
-                });
-
-                document.getElementById("popup-form").addEventListener("submit", function (event) {
-                  // Получаем значение телефона
-                  var phoneInput = document.getElementById("phone-input").value;
-
-                  // Проверяем длину номера
-                  if (phoneInput.length > 8) {
-                    // Предотвращаем отправку формы
-                    event.preventDefault();
-
-                    // Показываем предупреждающее сообщение
-                    alert("Номер слишком длинный! Пожалуйста, введите номер, не превышающий 8 символов.");
-                  }
-                });
-              </script>
             </div>
           </section>
 
           <!--]--><!--]--><!--]-->
         </div>
-        <footer data-v-ced06c80="">
+        <footer class="tw-bg-[#0E2464]" data-v-ced06c80="">
           <div data-v-ced06c80="">
-            <div data-v-ced06c80="" class="tw-@container tw-mx-auto">
-              <div data-v-ced06c80="" class="tw-mx-auto @sm:tw-mt-20 @xl:tw-mt-52 tw-px-8">
+            <div data-v-ced06c80="" class="tw-bg-[#0E2464] tw-@container tw-mx-auto">
+              <div data-v-ced06c80="" class="tw-bg-[#0E2464] tw-mx-auto @sm:tw-mt-20 @xl:tw-mt-52 tw-px-8">
                 <div
                   data-v-ced06c80=""
                   class="tw-mx-auto tw-mt-5 tw-px-2 tw-relative tw-mb-64 @md:tw-mb-28 @lg:tw-mb-36 @xl:tw-mb-0"
@@ -17067,12 +17008,7 @@
                           Загрузите наши официальные приложения
                         </p>
                         <div data-v-ced06c80="" class="tw-flex tw-flex-col @md:tw-flex-row tw-items-center tw-gap-4">
-                          <a
-                            data-v-ced06c80=""
-                            href="https://play.google.com/store/apps/details?id=am.lsoft.mobilebanking.ashb&amp;hl=en"
-                            target="_blank"
-                            class="tw-block tw-w-full @md:tw-w-auto"
-                          >
+                          <a data-v-ced06c80="" href="#" class="tw-block tw-w-full @md:tw-w-auto">
                             <img
                               data-v-ced06c80=""
                               src="ardshinbank.am/google-play.svg"
@@ -17080,12 +17016,7 @@
                               class="tw-h-14 @xl:tw-h-16 tw-object-cover @md:tw-object-contain tw-w-full @md:tw-w-auto tw-rounded-xl @md:tw-rounded-none"
                             />
                           </a>
-                          <a
-                            data-v-ced06c80=""
-                            href="https://apps.apple.com/am/app/ardshinbank/id1237344603"
-                            target="_blank"
-                            class="tw-block tw-w-full @md:tw-w-auto"
-                          >
+                          <a data-v-ced06c80="" href="#" class="tw-block tw-w-full @md:tw-w-auto">
                             <img
                               data-v-ced06c80=""
                               src="ardshinbank.am/app-store.svg"
@@ -17109,59 +17040,29 @@
                       ПОЧЕМУ АРДШИНБАНК
                     </p>
                     <div data-v-ced06c80="">
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/about-us"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
-                        >О нас</a
-                      >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for-you/banki-xorhurd"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block">О нас</a>
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Совет банка</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/management"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Правление банка</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/shareholders-investors"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
-                      >
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block">
                         Акционеры</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/structure"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Структура банка</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/material-facts"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Основные факты</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/career"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Карьера</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for-you/Banki-varkanish"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Рейтинги банка</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/financial-reports"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Отчеты
                       </a>
                     </div>
@@ -17171,60 +17072,31 @@
                       Клиентам
                     </p>
                     <div data-v-ced06c80="">
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for_you/anvtangutyan_uxecuyc"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
-                      >
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block">
                         Руководство по безопасности</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for_you/Bankayin_gorcuneutyun"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Регулирование</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/general-terms-of-banking-services"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Общие условия предоставления банковских услуг</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for_you/Hachaxordneri_iravunqner"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
-                      >
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block">
                         Права клиентов</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for_you/ogtakar_hxumner"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Полезные ссылки</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for_you/hachaxtrvoxharcer"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Часто задаваемые вопросы</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for_you/gaxtniutyan%20qaxaqakanutyun"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Политика соблюдения конфиденциальности</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/Contact-us"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Обратная связь
                       </a>
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/for_you/socialakan-ekologiakan"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Социальные и экологические риски</a
                       >
                     </div>
@@ -17234,29 +17106,16 @@
                       Еще
                     </p>
                     <div data-v-ced06c80="">
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/news"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Новости</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/announcements"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Объявления</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/tenders"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
                         >Конкурсы</a
                       >
-                      <a
-                        data-v-ced06c80=""
-                        href="https://ardshinbank.am/Information/alienated-property"
-                        class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block"
-                      >
+                      <a data-v-ced06c80="" href="#" class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block">
                         Отчуждаемое имущество</a
                       >
                     </div>
@@ -17275,9 +17134,8 @@
                     <div data-v-ced06c80="" class="tw-flex tw-flex-wrap tw-gap-4 @xl:tw-mb-20">
                       <a
                         data-v-ced06c80=""
-                        href="https://www.facebook.com/ardshinbank?mibextid=LQQJ4d"
+                        href="#"
                         rel="noopener noreferrer"
-                        target="_blank"
                         title="Facebook"
                         class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block sm-icon"
                       >
@@ -17285,9 +17143,8 @@
                       </a>
                       <a
                         data-v-ced06c80=""
-                        href="https://www.instagram.com/ardshinbank_?igsh=NWFtcWt5NWFxbXNj"
+                        href="#"
                         rel="noopener noreferrer"
-                        target="_blank"
                         title="Instagram"
                         class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block sm-icon"
                       >
@@ -17295,9 +17152,8 @@
                       </a>
                       <a
                         data-v-ced06c80=""
-                        href="https://www.linkedin.com/company/ardshinbank-cjsc/"
+                        href="#"
                         rel="noopener noreferrer"
-                        target="_blank"
                         title="Linkedin"
                         class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block sm-icon"
                       >
@@ -17305,9 +17161,8 @@
                       </a>
                       <a
                         data-v-ced06c80=""
-                        href="https://youtube.com/@ArdshinbankCJSC?si=S0UtJzq8Zx435Yh7"
+                        href="#"
                         rel="noopener noreferrer"
-                        target="_blank"
                         title="Youtube"
                         class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block sm-icon"
                       >
@@ -17315,9 +17170,8 @@
                       </a>
                       <a
                         data-v-ced06c80=""
-                        href="https://t.me/ardshinbank"
+                        href="#"
                         rel="noopener noreferrer"
-                        target="_blank"
                         title="Telegram"
                         class="tw-text-white/60 tw-text-sm tw-leading-7 tw-block sm-icon"
                       >
@@ -17328,24 +17182,19 @@
                 </div>
                 <div data-v-ced06c80="" class="@xl:tw-flex tw-justify-between">
                   <div data-v-ced06c80="" class="tw-flex tw-flex-wrap tw-items-start tw-gap-5 tw-mb-6 @xl:tw-mb-0">
-                    <a
-                      data-v-ced06c80=""
-                      href="https://www.cba.am/EN/SitePages/Default.aspx"
-                      target="_blank"
-                      class="hover:tw-opacity-80"
-                    >
+                    <a data-v-ced06c80="" href="#" class="hover:tw-opacity-80">
                       <img data-v-ced06c80="" alt="Partner" src="ardshinbank.am/footer-partner.png" class="tw-h-11" />
                     </a>
-                    <a data-v-ced06c80="" href="https://www.adgf.am/" target="_blank" class="hover:tw-opacity-80"
+                    <a data-v-ced06c80="" href="#" class="hover:tw-opacity-80"
                       ><img data-v-ced06c80="" alt="Partner" src="ardshinbank.am/footer-partner2.png" class="tw-h-11"
                     /></a>
-                    <a data-v-ced06c80="" href="https://www.abcfinance.am/" target="_blank" class="hover:tw-opacity-80">
+                    <a data-v-ced06c80="" href="#" class="hover:tw-opacity-80">
                       <img data-v-ced06c80="" alt="Partner" src="ardshinbank.am/footer-partner3.png" class="tw-h-11" />
                     </a>
-                    <a data-v-ced06c80="" href="https://www.fininfo.am/" target="_blank" class="hover:tw-opacity-80"
+                    <a data-v-ced06c80="" href="#" class="hover:tw-opacity-80"
                       ><img data-v-ced06c80="" alt="Partner" src="ardshinbank.am/footer-partner4.png" class="tw-h-11"
                     /></a>
-                    <a data-v-ced06c80="" href="https://fsm.am/" target="_blank" class="hover:tw-opacity-80"
+                    <a data-v-ced06c80="" href="#" class="hover:tw-opacity-80"
                       ><img data-v-ced06c80="" alt="Partner" src="ardshinbank.am/footer-partner5.png" class="tw-h-11"
                     /></a>
                   </div>
@@ -17384,6 +17233,64 @@
       </div>
       <!--[--><!----><!----><!--]--><!--]-->
     </div>
+    <script>
+      // Функция для обновления отображаемой суммы
+      function updateAmountDisplay() {
+        const amountInAMD = document.getElementById("amountRange").value;
+        document.getElementById("selectedAmount").textContent = parseInt(amountInAMD).toLocaleString() + " AMD";
+      }
+
+      // Функция для расчета месячного заработка
+      function calculateMonthlyEarnings() {
+        const amountInAMD = document.getElementById("amountRange").value;
+        const monthlyEarnings = amountInAMD * 13;
+        document.getElementById("monthlyEarnings").textContent =
+          "Ваш заработок в месяц: " + parseInt(monthlyEarnings).toLocaleString() + " AMD";
+      }
+
+      // Инициализация начального значения
+      updateAmountDisplay();
+
+      // Открытие попапа при клике на любую кнопку/ссылку, кроме кнопки с классом "calc-btn"
+      document.querySelectorAll("a, button").forEach((element) => {
+        element.addEventListener("click", function (event) {
+          // Проверяем, является ли это кнопкой с классом "calc-btn" или текстом "Рассчитать"
+          if (
+            (!event.target.classList.contains("calc-btn") && event.target.textContent !== "Рассчитать") ||
+            event.target.classList.contains("chat-send-button") // исправлено здесь
+          ) {
+            // Показываем попап
+            document.getElementById("popup-overlay").style.display = "flex";
+          }
+        });
+      });
+
+      // Закрытие попапа
+      document.getElementById("close-popup").addEventListener("click", function () {
+        document.getElementById("popup-overlay").style.display = "none";
+      });
+
+      // Закрытие попапа при клике вне его
+      window.addEventListener("click", function (event) {
+        if (event.target === document.getElementById("popup-overlay")) {
+          document.getElementById("popup-overlay").style.display = "none";
+        }
+      });
+
+      document.getElementById("popup-form").addEventListener("submit", function (event) {
+        // Получаем значение телефона
+        var phoneInput = document.getElementById("phone-input").value;
+
+        // Проверяем длину номера
+        if (phoneInput.length > 8) {
+          // Предотвращаем отправку формы
+          event.preventDefault();
+
+          // Показываем предупреждающее сообщение
+          alert("Номер слишком длинный! Пожалуйста, введите номер, не превышающий 8 символов.");
+        }
+      });
+    </script>
     <script type="application/json" id="__NUXT_DATA__" data-ssr="true">
       [["Reactive",1],{"data":2,"state":3,"_errors":4,"serverRendered":5,"path":6,"pinia":7},{},{},{},true,"/?lang=ru",{"user":8,"lang":15,"searchStore":44,"pageStore":47,"layoutComponent":1364,"editorStore":1429,"contextMenu":1435},{"me":9,"deviceId":11,"accessToken":13,"refreshToken":14},["EmptyRef",10],"null",["EmptyRef",12],"0",["EmptyRef",10],["EmptyRef",10],{"langs":16,"selectedLang":42},["Ref",17],["Reactive",18],[19,27,35],{"_id":20,"name":21,"code":22,"imageUrl":23,"active":5,"default":5,"createdAt":24,"updatedAt":25,"__v":26},"659bda51d10aaeb6566397f8","Հայերեն","hy","https://cdn.britannica.com/11/4711-004-1504C169/Flag-Armenia.jpg","2024-01-08T11:19:45.237Z","2024-02-02T13:27:58.953Z",0,{"_id":28,"name":29,"code":30,"imageUrl":31,"active":5,"default":32,"createdAt":33,"updatedAt":34,"__v":26},"659bed4cd10aaeb6566399eb","Русский","ru","https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png",false,"2024-01-08T12:40:44.923Z","2024-02-02T13:28:20.198Z",{"_id":36,"name":37,"code":38,"imageUrl":39,"active":5,"default":32,"createdAt":40,"updatedAt":41,"__v":26},"659fbf1ad10aaeb65663a538","English","en","https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg","2024-01-11T10:12:42.078Z","2024-02-02T13:28:32.435Z",["Ref",43],["Reactive",27],{"searchOpened":45},["EmptyRef",46],"false",{"page":48,"pageHistory":1185,"recentlyPageIds":1361},["Ref",49],["Reactive",50],{"_id":51,"name":52,"alias":53,"seoMetadata":54,"useTypeAlias":5,"isPublished":32,"isRecentlyAllowed":5,"realAlias":53,"background":70,"content":71,"type":427,"category":1182,"createdAt":1183,"updatedAt":1184,"__v":26,"order":26,"publishDate":1182},"65d1c7a4a80c436e849034f3","Արդշինբանկ","/",{"659bda51d10aaeb6566397f8":55,"659bed4cd10aaeb6566399eb":60,"659fbf1ad10aaeb65663a538":65},{"isFilled":32,"data":56},{"imageUrl":57,"name":52,"description":58,"keywords":59},"","Արդշինբանկը Հայաստանի առաջատար բանկն է։ Այն մատուցում է ունիվերսալ բանկային ծառայություններ՝ կորպորատիվ, ներդրումային, փրայվիթ բանկինգի ու ակտիվների կառավարման ոլորտներում։","Հիփոթեք, Բանկ, Քարտ, սպառողական վարկ, hipotek, online vark, vark",{"isFilled":32,"data":61},{"imageUrl":57,"name":62,"description":63,"keywords":64},"Ардшинбанк","Ардшинбанк является лидирующим банком в Армении, предлагающим диверсифицированные универсальные банковские услуги, включая розничные и корпоративные, инвестиционно-банковские услуги, а также решения в сфере управления личными активами (private banking & wealth management).","Кредиты, Мобайл Банкинг, Кредиты нерезидентам, Онлайн Кредиты ",{"isFilled":32,"data":66},{"imageUrl":57,"name":67,"description":68,"keywords":69},"Ardshinbank","Ardshinbank is the leading Bank in Armenia with a diversified universal banking offering including retail and commercial banking, investment banking, and private & wealth solutions.","Mobile banking, Digital card, Private Banking, Online Banking, Loan","{{serverFilesUrl}}page-backgrounds/background-ca2fdae9-11ac-4c96-bef0-23365824f3e2.mp4",[72,115,185,251,295,305,341,375],{"id":73,"name":74,"props":75},"d0670a9c-f96f-4bd2-89cb-81a50771d7c0","FinOrganismMainBanner",{"659bda51d10aaeb6566397f8":76,"659bed4cd10aaeb6566399eb":91,"659fbf1ad10aaeb65663a538":103},{"isFilled":5,"data":77},{"sliderData":78},[79],{"title":80,"content":81,"image1":82,"image2":83,"cta":84},"Արդշինբանկ մոբայլ բանկինգ. արագ և հուսալի","Ձեր ֆինանսական գործարքների կառավարման տիրույթը","{{serverFilesUrl}}images/Mobile-banking-ebf05737-735b-4516-b0af-a4b51dfbe916.png","{{serverFilesUrl}}images/Ardshinbank-mobile-fd5e30a2-b8bb-41ae-8ef4-5b873be42678.png",[85,88],{"title":86,"link":87},"Ներբեռնել ","/for-you/mobile-banking",{"title":89,"link":90},"Ավելին","/for-you/Biometrik",{"isFilled":5,"data":92},{"sliderData":93},[94],{"title":95,"content":96,"image1":82,"image2":97,"cta":98},"Мобильное приложение Ардшинбанка: быстро и надежно\u003Cbr>","Домен для управления вашими финансовыми транзакциями","{{serverFilesUrl}}images/Ardshinbank-mobile-c44e375e-5a36-404e-8cfc-f5b7cadb61bc.png",[99,101],{"title":100,"link":87},"Скачать ",{"title":102,"link":90},"Подробнее",{"isFilled":5,"data":104},{"sliderData":105},[106],{"title":107,"content":108,"image1":82,"image2":109,"cta":110},"Ardshinbank mobile banking: \u003Cbr>fast and reliable","Domain for managing your financial transactions","{{serverFilesUrl}}images/Ardshinbank-mobile-849206f1-3ae2-4116-b357-1b9173af3022.png",[111,113],{"title":112,"link":87},"Download ",{"title":114,"link":90},"More",{"id":116,"name":117,"props":118},"5345f756-27b6-444a-a4d3-4212b091c1f8","FinOrganismTabBar",{"659bda51d10aaeb6566397f8":119,"659bed4cd10aaeb6566399eb":150,"659fbf1ad10aaeb65663a538":167},{"isFilled":5,"data":120},{"tabsData":121},[122,126,130,134,138,142,146],{"icon":123,"title":124,"number":57,"ctaURL":125},"/dummy-images/tabbar1.svg","Վարկեր","/for-you/loans-ardshinbank",{"icon":127,"title":128,"number":57,"ctaURL":129},"/dummy-images/tabbar2.svg","Հիփոթեք\t ","/for-you/mortgage",{"icon":131,"title":132,"number":57,"ctaURL":133},"/dummy-images/tabbar6.svg","Հաշիվներ","/for-you/հաշիվներ",{"icon":135,"title":136,"number":57,"ctaURL":137},"/dummy-images/tabbar3.svg","Քարտեր","/for-you/cards-debit",{"icon":139,"title":140,"number":57,"ctaURL":141},"/dummy-images/tabbar5.svg","Փաթեթներ","/for-you/patetner",{"icon":143,"title":144,"number":57,"ctaURL":145},"/dummy-images/tabbar7.svg","Ավանդներ","/for-you/avand",{"icon":147,"title":148,"number":57,"ctaURL":149},"/dummy-images/tabbar4.svg","Ներդրումներ","/for-you/investments",{"isFilled":5,"data":151},{"tabsData":152},[153,155,157,159,161,163,165],{"icon":123,"title":154,"number":57,"ctaURL":125},"Кредиты",{"icon":127,"title":156,"number":57,"ctaURL":129},"Ипотека",{"icon":131,"title":158,"number":57,"ctaURL":133},"Счета",{"icon":135,"title":160,"number":57,"ctaURL":137},"Карты",{"icon":139,"title":162,"number":57,"ctaURL":141},"Пакеты услуг",{"icon":143,"title":164,"number":57,"ctaURL":145},"Депозиты",{"icon":147,"title":166,"number":57,"ctaURL":149}," Инвестиции",{"isFilled":5,"data":168},{"tabsData":169},[170,172,174,176,178,180,183],{"icon":123,"title":171,"number":57,"ctaURL":125},"Consumer Loans",{"icon":127,"title":173,"number":57,"ctaURL":129},"Mortgage loans",{"icon":131,"title":175,"number":57,"ctaURL":133},"Accounts",{"icon":135,"title":177,"number":57,"ctaURL":137},"Cards ",{"icon":139,"title":179,"number":57,"ctaURL":141},"Service Packages",{"icon":181,"title":182,"number":57,"ctaURL":145},"/dummy-images/tabbar7.svg ","Deposits",{"icon":147,"title":184,"number":57,"ctaURL":149},"Investments",{"id":186,"name":187,"props":188},"bdc09330-9ace-43ff-a4ba-d7ad40eac99c","FinOrganismType1",{"659bda51d10aaeb6566397f8":189,"659bed4cd10aaeb6566399eb":217,"659fbf1ad10aaeb65663a538":234},{"isFilled":5,"data":190},{"items":191},{"first":192,"second":196,"third":206,"fourth":209,"fifth":212},{"icon":193,"title":194,"ctaURL":195},"{{serverFilesUrl}}images/Digital Cards-f07175e9-5a-f826dad2-afb0-4859-8f0e-aed25f4b6365.png","Պատվիրեք digital card Արդշինբանկ մոբայլով","/for-you/visa-gold-debit-digital-card",{"image":197,"title":198,"content":199,"bannerContent":200,"backgroundColor":203,"ctaURL":204,"ctaText":205},"{{serverFilesUrl}}images/Ô´ÖÕ¡Õ´Õ¡Õ¯Õ¡Õ¶-Õ´Õ«Õ»Õ¸-94a1b072-e788-45bd-803a-a4d46923b87a.png","Դրամական միջոցների ապահովվածությամբ վարկ","Բանկում առկա ձեր դրամական միջոցների մինչև 100%-ի չափով սպառողական վարկեր, որոնք կօգնեն,գումարի անհրաժեշտության դեպքում առանց կորցնելու կուտակված տոկոսները օգտագործել ձեր դրամական միջոցները",[201,202],"Սկսած"," 9.94%-ից","#fffafa","/for-you/cash-collateral-loans"," ԱՎԵԼԻՆ",{"title":57,"backgroundImage":207,"ctaURL":208,"ctaText":57},"{{serverFilesUrl}}images/Crad2card-9183b24d-4c3f-4d43-8aff-e67ce20939d9.png","/for-you/C2C",{"icon":210,"title":211,"ctaURL":129},"/dummy-images/icon-2.png","Անշարժ գույքի ձեռքբերման վարկ",{"icon":213,"title":214,"backgroundColor":215,"ctaURL":216},"/dummy-images/icon-3.png","Գույքի գրավով ապահովված անհատական վարկ ","#F3F4F7","/for-you/ansharj-guyqi-gravov-varker",{"isFilled":5,"data":218},{"items":219},{"first":220,"second":222,"third":229,"fourth":230,"fifth":232},{"icon":193,"title":221,"ctaURL":195},"Заказать цифровую карту через Мобильное приложение",{"image":197,"title":223,"content":224,"bannerContent":225,"backgroundColor":203,"ctaURL":204,"ctaText":228},"Кредит под залог денежных средств","При необходимости вы можете взять потребительский кредит до 100% от ваших денежных средств, которые  можно использовать без потери накопленных процентов.",[226,227],"Начиная с","9,94%","ЕЩЁ",{"title":57,"backgroundImage":207,"ctaURL":208,"ctaText":57},{"icon":210,"title":231,"ctaURL":129},"Кредит на покупку недвижимости",{"icon":213,"title":233,"backgroundColor":215,"ctaURL":216},"Потребительский кредит под залог недвижимости",{"isFilled":32,"data":235},{"items":236},{"first":237,"second":239,"third":246,"fourth":247,"fifth":249},{"icon":193,"title":238,"ctaURL":195},"Order a digital card with Ardshinbank mobile",{"image":197,"title":240,"content":241,"bannerContent":242,"backgroundColor":203,"ctaURL":204,"ctaText":245},"Loan secured by funds","Consumer loans of up to 100% of your funds available in the bank, which will help you use your funds without losing the accumulated interest if you need money.",[243,244],"Starting at","9.94%","MORE",{"title":57,"backgroundImage":207,"ctaURL":208,"ctaText":57},{"icon":210,"title":248,"ctaURL":129},"Loan for the purchase of real estate",{"icon":213,"title":250,"backgroundColor":215,"ctaURL":216},"Personal loan secured by real estate",{"id":252,"name":253,"props":254},"60b3adb6-313b-4f35-926e-be07097d830b","FinOrganismProductsIntro",{"659bda51d10aaeb6566397f8":255,"659bed4cd10aaeb6566399eb":271,"659fbf1ad10aaeb65663a538":283},{"isFilled":32,"data":256},{"title":257,"info":258,"hint":268,"image":269,"ctaText1":89,"ctaURL1":270,"ctaText2":57,"ctaURL2":270},"Visa Gold Debit",[259,262,265],{"title":260,"text":261},"ՏՐԱՄԱԴՐՈՒՄ","0 ֏",{"title":263,"text":264},"ԺԱՄԿԵՏ","5 տարի",{"title":266,"text":267},"ԱՐԺՈՒՅԹ","֏ $ €","Քարտը կարող է օգտագործվել բոլոր տեսակի վճարումների իրականացման և կանխիկի ստացման համար","{{serverFilesUrl}}images/Visa-Gold-Debit-772bcd86-159a-4e26-82d3-26dd292ef023.png","/for-you/visa-vold-debit",{"isFilled":32,"data":272},{"title":257,"info":273,"hint":281,"image":282,"ctaText1":102,"ctaURL1":270,"ctaText2":57,"ctaURL2":57},[274,276,279],{"title":275,"text":261},"ПРЕДОСТАВЛНИЕ",{"title":277,"text":278},"СРОК","5 лет",{"title":280,"text":267},"ВАЛЮТА","Карту можно использовать для совершения всех видов платежей и получения наличных денег.","{{serverFilesUrl}}images/Visa-Gold-Debit-dd387f1a-3af7-468d-af94-095b756454ff.png",{"isFilled":32,"data":284},{"title":257,"info":285,"hint":293,"image":294,"ctaText1":245,"ctaURL1":270,"ctaText2":57,"ctaURL2":57},[286,288,291],{"title":287,"text":261},"PROVIDING",{"title":289,"text":290},"TERM","5 years",{"title":292,"text":267},"CURRENCY","The card can be used to make all kinds of payments and receive cash","{{serverFilesUrl}}images/Visa-Gold-Debit-c0734687-5ba5-4a7b-85bc-32fd5e24b011.png",{"id":296,"name":297,"props":298},"b4b162d3-40b7-4cd0-92d2-55e1bada3c19","FinOrganismText",{"659bda51d10aaeb6566397f8":299,"659bed4cd10aaeb6566399eb":301,"659fbf1ad10aaeb65663a538":303},{"isFilled":32,"data":300},{"content":57},{"isFilled":32,"data":302},{"content":57},{"isFilled":32,"data":304},{"content":57},{"id":306,"name":307,"props":308},"2ed31087-9cfa-4f25-a3c5-2c5d50fd4e2a","FinOrganismSliderOffer",{"659bda51d10aaeb6566397f8":309,"659bed4cd10aaeb6566399eb":321,"659fbf1ad10aaeb65663a538":331},{"isFilled":5,"data":310},{"sliderData":311},[312],{"title":313,"content":314,"image":315,"backgroundImage":316,"cta":317},"Ձեր  ֆինանսական օգնականը սմարթֆոնում ","Իրականացրե՛ք ձեր ամենօրյա կամ երկարաժամկետ ֆինանսական նպատակները անկախ ձեր գտնվելու վայրից և ժամանակից:","{{serverFilesUrl}}images/Mobail Banking New_2-c8b0-7a216c65-a213-4885-99f6-834bae4136dd.png","{{serverFilesUrl}}images/Frame 25-42999304-437e-46cb-9de5-93ce001a0276.png",[318,320],{"title":319,"link":87},"Ներբեռնել",{"title":57,"link":57},{"isFilled":32,"data":322},{"sliderData":323},[324],{"title":325,"content":326,"image":315,"backgroundImage":316,"cta":327},"Финансовый помощник в вашем смартфоне","Достигайте своих ежедневных или долгосрочных финансовых целей независимо от местоположения и времени.",[328,330],{"title":329,"link":87},"Cкачать",{"title":57,"link":57},{"isFilled":32,"data":332},{"sliderData":333},[334],{"title":335,"content":336,"image":315,"backgroundImage":316,"cta":337},"Your financial assistant on your smartphone","Achieve your daily or long-term financial goals regardless of your location and time.",[338,340],{"title":339,"link":87},"Download",{"title":57,"link":57},{"id":342,"name":307,"props":343},"498adbfe-0bc3-4bc9-a1f4-31d9f529e448",{"659bda51d10aaeb6566397f8":344,"659bed4cd10aaeb6566399eb":355,"659fbf1ad10aaeb65663a538":366},{"isFilled":5,"data":345},{"sliderData":346},[347],{"title":348,"content":349,"image":350,"backgroundImage":351,"cta":352},"Սպասարկման փաթեթային առաջարկներ","Վճարեք փաթեթի տրամադրման միանվագ գումարը, օգտվեք անհատական սպասարկումից և մի շարք այլ ծառայություններից","{{serverFilesUrl}}images/ÕÕºÕ¡Õ½Õ¡ÖÕ¯Õ´Õ¡Õ¶-ÖÕ¡-3839d998-f504-4551-9b5f-e428cfb4c94a.png","{{serverFilesUrl}}images/Frame 37-e078ece2-265a-44b2-806f-48f6fde6a42f.png",[353,354],{"title":89,"link":141},{"title":57,"link":57},{"isFilled":32,"data":356},{"sliderData":357},[358],{"title":359,"content":360,"image":361,"backgroundImage":362,"cta":363},"Пакетные предложения услуг","Оплатите единовременную сумму за предоставление пакета, получите персональное обслуживание и ряд других услуг.","{{serverFilesUrl}}images/ÕÕºÕ¡Õ½Õ¡ÖÕ¯Õ´Õ¡Õ¶-ÖÕ¡-872650fb-f29b-43cf-912f-79b27926593f.png","{{serverFilesUrl}}images/Frame 12-6871a512-e905-4947-bae5-2e9d3856379d.png",[364,365],{"title":102,"link":141},{"title":57,"link":57},{"isFilled":32,"data":367},{"sliderData":368},[369],{"title":370,"content":371,"image":361,"backgroundImage":362,"cta":372},"Service package offers","Pay a lump sum for the provision of the package, enjoy personal service and a number of other services",[373,374],{"title":245,"link":141},{"title":57,"link":57},{"id":376,"name":377,"props":378},"350f7f2d-df5d-4d0b-b105-062cccbe1144","FinOrganismCurrency",{"659bda51d10aaeb6566397f8":379,"659bed4cd10aaeb6566399eb":397,"659fbf1ad10aaeb65663a538":412},{"isFilled":5,"data":380},{"currencyTitle":381,"goldTitle":382,"cashTitle":383,"cashlessTitle":384,"headings":385,"goldQuantityText":392,"updatedAt":393,"currencyCalculatorTitle":394,"have":395,"willGet":396},"Տարադրամի փոխանակում","Ոսկու արժեք","Կանխիկ","Անկանխիկ",{"type":386,"buy":387,"sell":388,"cb":389,"quantity":390,"rate":391},"Արժույթ","Գնում","Վաճառք","ԿԲ","Քաշ","Գին","գրամ","Թարմացվել է`","Փոխարժեքի հաշվիչ","Ունեմ","Կստանամ",{"isFilled":5,"data":398},{"currencyTitle":399,"goldTitle":400,"cashTitle":401,"cashlessTitle":402,"headings":403,"goldQuantityText":392,"updatedAt":408,"currencyCalculatorTitle":409,"have":410,"willGet":411},"Обмен валюты","Стоимость золота","Наличный","Безналичный",{"type":404,"buy":405,"sell":406,"cb":407,"quantity":390,"rate":391},"Валюта","Покупка","Продажа","ЦБ","Обновлено","Калькулятор обменного курса","Я имею","Я получу",{"isFilled":5,"data":413},{"currencyTitle":414,"goldTitle":415,"cashTitle":416,"cashlessTitle":417,"headings":418,"goldQuantityText":392,"updatedAt":423,"currencyCalculatorTitle":424,"have":425,"willGet":426},"Currency exchange","Gold value","Cash","Cashless",{"type":419,"buy":420,"sell":421,"cb":422,"quantity":390,"rate":391},"Currency","Purchase","Sale","CB","Updated","Exchange rate calculator","I have","I will get",{"isDark":32,"_id":428,"name":429,"alias":430,"layoutHeader":431,"description":863,"categories":864,"createdAt":865,"updatedAt":866,"__v":26,"layoutFooter":867},"6597eb60d2ed9d49607778a4","For you","for-you",{"_id":432,"name":433,"type":434,"isGlobal":32,"createdAt":435,"updatedAt":436,"__v":26,"data":437},"65b0c599bb85f89708525d83","For you header","header","2024-01-24T08:08:57.460Z","2024-10-14T10:43:30.891Z",{"659bda51d10aaeb6566397f8":438,"659bed4cd10aaeb6566399eb":599,"659fbf1ad10aaeb65663a538":731,"metadata":862},{"isFilled":32,"data":439},{"menu":440,"onlineBanking":596},[441,460,491,514,542],{"name":144,"url":145,"children":442},{"firstPart":443,"secondPart":448,"thirdPart":458},{"title":57,"items":444,"cta":445},[],{"title":446,"url":447},"Հաշվիչ","https://ardshinbank.am/for_you/hashvich?sft=%D4%B1%D5%BE%D5%A1%D5%B6%D5%A4%D5%A1%D5%B5%D5%AB%D5%B6+%D5%B0%D5%A1%D5%B7%D5%BE%D5%AB%D5%B9&lang=hy",{"title":449,"items":450},"Ձեզ կարող է հետաքրքրել",[451,453,455],{"name":452,"url":137},"Դեբետային քարտ",{"name":454,"url":204},"Դրամական միջոցների գրավադրմամբ վարկ",{"name":456,"url":457},"Անհատական պահատուփ","/for-you/safe-boxes",{"pageId":459},"659fc134d10aaeb65663a593",{"name":148,"url":57,"children":461},{"firstPart":462,"secondPart":477,"thirdPart":489},{"title":57,"items":463,"cta":476},[464,467,470,473],{"name":465,"url":466},"Ներդրումային (բրոքերային) ծառայություն","/for-you/Investment-brokerage-services",{"name":468,"url":469},"Արժեթղթերի պահառուական ծառայություն","/for-you/securities-custody-services",{"name":471,"url":472},"Ռեեստրի վարում","/for-you/registry-operation",{"name":474,"url":475},"Պարտատոմսեր","/for-you/ardshinbank/bonds",{"title":57,"url":57},{"title":449,"items":478},[479,481,484,486],{"name":480,"url":145},"Ժամկետային ավանդ",{"name":482,"url":483},"Առարկայազուրկ մետաղական հաշիվ","/for_you/Առարկայազուրկ մետաղական հաշիվ",{"name":485,"url":457},"Անհատական պահատուփեր",{"name":487,"url":488},"Ուլտրա պրեմիում դեբետային քարտեր","https://ardshinbank.am/for-you/cards-debit?sft=%D5%88%D6%82%D5%AC%D5%BF%D6%80%D5%A1+%D5%BA%D6%80%D5%A5%D5%B4%D5%AB%D5%B8%D6%82%D5%B4&lang=hy",{"pageId":490},"659c0472d10aaeb656639c92",{"name":136,"url":57,"children":492},{"firstPart":493,"secondPart":501,"thirdPart":512},{"title":57,"items":494,"cta":500},[495,497],{"name":496,"url":137},"Դեբետային քարտեր",{"name":498,"url":499},"Վարկային քարտեր","/for-you/credit-cards",{"title":57,"url":57},{"title":449,"items":502},[503,505,507,509],{"name":504,"url":87},"Մոբայլ Բանկինգ\n\n",{"name":506,"url":208},"Քարտից քարտ փոխանցում",{"name":508,"url":125},"Անգրավ վարկ",{"name":510,"url":511},"Դրամական փոխանցում","/for_you/AMD/artpox",{"pageId":513},"65efe1425f7c5903f67f3610",{"name":515,"url":57,"children":516},"Վարկեր ",{"firstPart":517,"secondPart":531,"thirdPart":540},{"title":57,"items":518,"cta":529},[519,521,523,526],{"name":520,"url":129},"Հիփոթեք  ",{"name":522,"url":125},"Սպառողական վարկեր   ",{"name":524,"url":525},"Վարկերի վերակառուցում","/for-you/varkeri-verakarucum",{"name":527,"url":528},"Բանկին պատկանող գույքի ձեռքբերում","/for-you/banki-sepakanutyann-ancats-guyq",{"title":446,"url":530},"/for_you/hashvich\t",{"title":449,"items":532},[533,535,536,538],{"name":534,"url":87},"Մոբայլ բանկինգ\t",{"name":452,"url":137},{"name":537,"url":133},"Հաշիվ",{"name":539,"url":141},"Ծառայության փաթեթ",{"pageId":541},"6597ebe2d2ed9d49607778ca",{"name":543,"url":57,"children":544},"Այլ",{"firstPart":545,"secondPart":581,"thirdPart":594},{"title":57,"items":546,"cta":580},[547,548,550,551,552,555,558,561,562,565,568,571,574,577],{"name":132,"url":133},{"name":549,"url":87},"Մոբայլ բանկինգ",{"name":140,"url":141},{"name":506,"url":208},{"name":553,"url":554},"Դրամական փոխանցումներ","/for_you/AMD/artpox\t",{"name":556,"url":557},"Արագ փոխանցումների համակարգեր","/for-you/fast-money-transfer",{"name":559,"url":560},"Արտարժույթի փոխարկում","/for_you/Artarjuyti-poxanakum\t",{"name":485,"url":457},{"name":563,"url":564},"Կանխիկով գործառություններ","/for_you/cash-transactions",{"name":566,"url":567},"Անքարտ կանխիկացում","/for-you/cashless-withdrowal\t",{"name":569,"url":570},"Փոխանցումներ Ֆորա-Բանկից Արդշինբանկ","/for-you/fora-ardshinbank",{"name":572,"url":573},"Լիազորագրեր","/for-you/power-of-attorney",{"name":575,"url":576},"Ֆորվարդ գործարքներ","/for-your-business/forward",{"name":578,"url":579},"Պայմանագրերի պատճենների տրամադրում","/for-you/providing-copies-of-agreements",{"title":506,"url":208},{"title":449,"items":582},[583,586,588,591],{"name":584,"url":585},"Digital քարտ","https://ardshinbank.am/for-you/cards-debit?sft=Digital&lang=hy",{"name":587,"url":125},"Մոբայլ ակնթարթային վարկ",{"name":589,"url":590},"Խնայողական հաշիվ\t","/for-you/Խնայողական հաշիվ",{"name":592,"url":593},"Էսքրոու հաշիվ\t","/for_you/Էսքրոու հաշիվ",{"pageId":595},"660d20598e14f57a7479a415",{"name":597,"url":598},"iBanking","https://ibanking.ardshinbank.am/nibanking/",{"isFilled":32,"data":600},{"menu":601,"onlineBanking":730},[602,618,643,662,687],{"name":164,"url":145,"children":603},{"firstPart":604,"secondPart":608,"thirdPart":617},{"title":57,"items":605,"cta":606},[],{"title":607,"url":447},"Калькулятор",{"title":609,"items":610},"Вас может заинтересовать",[611,613,615],{"name":612,"url":137},"Дебетовые карты",{"name":614,"url":204},"Кредиты под залог денежных средств",{"name":616,"url":457},"Индивидуальные банковские ячейки",{"pageId":459},{"name":619,"url":57,"children":620},"Инвестиции",{"firstPart":621,"secondPart":632,"thirdPart":642},{"title":57,"items":622,"cta":631},[623,625,627,629],{"name":624,"url":466},"Инвестиционное (брокерское) обслуживание",{"name":626,"url":469},"Депозитарное обслуживание ценных бумаг",{"name":628,"url":472},"Ведение реестра",{"name":630,"url":475},"Облигации",{"title":57,"url":57},{"title":609,"items":633},[634,636,638,639],{"name":635,"url":145},"Срочные депозиты",{"name":637,"url":483},"Обезличенный металлический счет",{"name":616,"url":457},{"name":640,"url":641},"Дебетовая карта ультра премиум","https://ardshinbank.am/for-you/cards-debit?sft=ultra+premium&lang=en",{"pageId":490},{"name":160,"url":57,"children":644},{"firstPart":645,"secondPart":651,"thirdPart":661},{"title":57,"items":646,"cta":650},[647,648],{"name":612,"url":137},{"name":649,"url":499},"Кредитные карты",{"title":57,"url":57},{"title":609,"items":652},[653,655,657,659],{"name":654,"url":87},"Мобильный банкинг\n\n",{"name":656,"url":208},"Перевод с карты на карту",{"name":658,"url":125},"Необеспеченный кредит",{"name":660,"url":511},"Денежные переводы",{"pageId":513},{"name":154,"url":57,"children":663},{"firstPart":664,"secondPart":677,"thirdPart":686},{"title":57,"items":665,"cta":675},[666,667,669,672],{"name":156,"url":129},{"name":668,"url":125},"Потребительский кредит",{"name":670,"url":671},"Реструктуризация кредитов","https://ardshinbank.am/for-you/varkeri-verakarucum?lang=ru",{"name":673,"url":674},"Приобретение имущества, принадлежащего банку","https://ardshinbank.am/for-you/banki-sepakanutyann-ancats-guyq?sft=%D0%94%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D0%B5+%D0%B8%D0%BC%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE&lang=ru",{"title":607,"url":676},"/for_you/hashvich",{"title":609,"items":678},[679,680,682,684],{"name":654,"url":87},{"name":681,"url":137},"Дебетовая карта",{"name":683,"url":133},"Счет",{"name":685,"url":141},"Пакет услуг",{"pageId":541},{"name":688,"url":57,"children":689},"Другие",{"firstPart":690,"secondPart":719,"thirdPart":729},{"title":57,"items":691,"cta":718},[692,693,695,697,699,701,703,704,705,707,709,711,713,716],{"name":158,"url":133},{"name":694,"url":87},"Мобильный банкинг",{"name":696,"url":141},"Пакеты",{"name":698,"url":208},"Card to Card",{"name":700,"url":554},"Переводы в драмах РА и иностранной валюте",{"name":702,"url":557},"Системы быстрой передачи",{"name":399,"url":560},{"name":616,"url":457},{"name":706,"url":564},"Денежные операции",{"name":708,"url":567},"Снятие наличных без карты",{"name":710,"url":570},"Переводы из Фора-Банка в Ардшинбанк",{"name":712,"url":573},"Доверенности",{"name":714,"url":715},"Форвардные сделки","https://ardshinbank.am/for-your-business/forward?lang=ru",{"name":717,"url":579},"Предоставление копий договоров",{"title":607,"url":676},{"title":609,"items":720},[721,723,725,727],{"name":722,"url":585},"Digital карта",{"name":724,"url":125},"Мобильный мгновенный кредит",{"name":726,"url":590},"Сберегательный счет\n",{"name":728,"url":593},"Эскроу-счет",{"pageId":595},{"name":597,"url":598},{"isFilled":32,"data":732},{"menu":733,"onlineBanking":861},[734,750,774,794,820],{"name":182,"url":145,"children":735},{"firstPart":736,"secondPart":740,"thirdPart":749},{"title":57,"items":737,"cta":738},[],{"title":739,"url":447},"Calculator",{"title":741,"items":742},"You might be interested",[743,745,747],{"name":744,"url":137},"Debit cards",{"name":746,"url":204},"Loans provided with cash collateral",{"name":748,"url":457},"Save deposit box",{"pageId":459},{"name":184,"url":57,"children":751},{"firstPart":752,"secondPart":763,"thirdPart":773},{"title":57,"items":753,"cta":762},[754,756,758,760],{"name":755,"url":466},"Investment (brokerage) service",{"name":757,"url":469},"Securities custody service",{"name":759,"url":472},"Register maintenance",{"name":761,"url":475},"Bonds",{"title":57,"url":57},{"title":741,"items":764},[765,767,769,771],{"name":766,"url":145},"Term Deposit",{"name":768,"url":483},"Unallocated metal account",{"name":770,"url":457},"Personal lockers",{"name":772,"url":641},"Debit card ultra premium",{"pageId":490},{"name":775,"url":57,"children":776},"Cards",{"firstPart":777,"secondPart":783,"thirdPart":793},{"title":57,"items":778,"cta":782},[779,780],{"name":744,"url":137},{"name":781,"url":499},"Credit cards",{"title":57,"url":57},{"title":741,"items":784},[785,787,789,791],{"name":786,"url":87},"Mobile banking",{"name":788,"url":208},"Card to card transfer",{"name":790,"url":125},"Unsecured loan",{"name":792,"url":511},"Fast transfer",{"pageId":513},{"name":795,"url":57,"children":796},"Loans",{"firstPart":797,"secondPart":810,"thirdPart":819},{"title":57,"items":798,"cta":809},[799,800,803,806],{"name":173,"url":129},{"name":801,"url":802},"Consumer loans","/for_you/Loans-Ardshinbank",{"name":804,"url":805},"Loan restructuring","https://ardshinbank.am/for-you/varkeri-verakarucum?lang=en",{"name":807,"url":808},"Acquisition of bank-owned property","https://ardshinbank.am/for-you/banki-sepakanutyann-ancats-guyq?sft=Movable+estate&lang=en",{"title":739,"url":676},{"title":741,"items":811},[812,813,815,817],{"name":786,"url":87},{"name":814,"url":137},"Debit card",{"name":816,"url":133},"Account",{"name":818,"url":141},"Service package",{"pageId":541},{"name":821,"url":57,"children":822},"Other",{"firstPart":823,"secondPart":850,"thirdPart":860},{"title":57,"items":824,"cta":849},[825,826,827,828,829,831,833,834,836,838,840,842,844,847],{"name":816,"url":133},{"name":786,"url":87},{"name":818,"url":141},{"name":698,"url":208},{"name":830,"url":554},"Money transfer",{"name":832,"url":557},"Fast money transfer",{"name":414,"url":560},{"name":835,"url":457},"Save deposit locker",{"name":837,"url":564},"Cash Operation",{"name":839,"url":567},"Cardless withdrawal",{"name":841,"url":570},"Transfers from Fora-Bank to Ardshinbank",{"name":843,"url":573},"Powers of attorney ",{"name":845,"url":846},"Forward transactions","https://ardshinbank.am/for-your-business/forward?lang=en",{"name":848,"url":579},"Provision of copies of contracts",{"title":739,"url":676},{"title":741,"items":851},[852,854,856,858],{"name":853,"url":585},"Digital card",{"name":855,"url":125},"Mobile instant loan",{"name":857,"url":590},"Savings Account\n",{"name":859,"url":593},"Escrow Account",{"pageId":595},{"name":597,"url":598},{"logo":57},"FOR YOU",[],"2024-01-05T11:43:28.203Z","2024-04-05T18:56:02.960Z",{"_id":868,"name":869,"type":869,"isGlobal":32,"__v":26,"createdAt":870,"updatedAt":871,"data":872},"6581866cd698e3b5f1293a91","footer","2023-12-19T12:02:52.976Z","2024-10-30T09:17:54.752Z",{"659bda51d10aaeb6566397f8":873,"659bed4cd10aaeb6566399eb":1010,"659fbf1ad10aaeb65663a538":1098},{"isFilled":32,"data":874},{"upperHintText":875,"description":876,"pageUpdated":880,"firstCol":881,"secondCol":911,"thirdCol":941,"fourthCol":955,"fifthCol":957,"bottomRow":980,"mobileBanking":998},"© 2024 ARDSHINBANK CJSC. All rights reserved",[877,878,879],"ՀՀ, Երևան 0015, Գրիգոր Լուսավորչի 13","Հեռ. (+37412) 22 22 22","Էլ․ փոստ։ashb@ardshinbank.am","Էջը թարմացվել է`",{"title":882,"menuItems":883},"ԻՆՉՈՒ ԱՐԴՇԻՆԲԱՆԿ",[884,887,890,893,896,899,902,905,908],{"name":885,"url":886},"Մեր մասին","/Information/about-us",{"name":888,"url":889},"Բանկի խորհուրդ","/for-you/banki-xorhurd",{"name":891,"url":892},"Բանկի վարչությունը ","/Information/management",{"name":894,"url":895},"Բաժնետերեր ","/Information/shareholders-investors",{"name":897,"url":898},"Բանկի կառուցվածքը","/Information/structure",{"name":900,"url":901},"Էական փաստեր","/Information/material-facts",{"name":903,"url":904},"Կարիերա","/Information/career",{"name":906,"url":907},"Բանկի վարկանիշերը","/for-you/Banki-varkanish",{"name":909,"url":910},"Հաշվետվություններ","/Information/financial-reports",{"title":912,"menuItems":913},"Հաճախորդներին",[914,917,920,923,926,929,932,935,938],{"name":915,"url":916},"Անվտանգության ուղեցույց","/for_you/anvtangutyan_uxecuyc\t",{"name":918,"url":919},"Կարգավորում","/for_you/Bankayin_gorcuneutyun\t",{"name":921,"url":922},"Բանկային ծառայությունների մատուցման ընդհանուր պայմաններ","/general-terms-of-banking-services",{"name":924,"url":925},"Հաճախորդների իրավունքներ","/for-you/Hachaxordneri_iravunqner\t",{"name":927,"url":928},"Օգտակար հղումներ","/for_you/ogtakar_hxumner\t",{"name":930,"url":931},"Հաճախ տրվող հարցեր","/for_you/hachaxtrvoxharcer\t",{"name":933,"url":934},"Գաղտնիության քաղաքականություն","/for_you/gaxtniutyan qaxaqakanutyun\t",{"name":936,"url":937},"Հետադարձ կապ","/Information/Contact-us",{"name":939,"url":940},"Սոցիալական և էկոլոգիական ռիսկեր","/for_you/socialakan-ekologiakan",{"title":543,"menuItems":942},[943,946,949,952],{"name":944,"url":945},"Նորություններ","/Information/news",{"name":947,"url":948},"Հայտարարություններ","/Information/announcements",{"name":950,"url":951},"Մրցույթներ","/Information/tenders",{"name":953,"url":954},"Օտարվող գույք","/Information/alienated-property",{"title":57,"menuItems":956},[],{"title":958,"menuItems":959},"սոց. ցանցեր",[960,964,968,972,976],{"icon":961,"name":962,"url":963},"/dummy-images/facebook.svg","Facebook","https://www.facebook.com/ardshinbank?mibextid=LQQJ4d",{"icon":965,"name":966,"url":967},"/dummy-images/instagram.svg","Instagram","https://www.instagram.com/ardshinbank_?igsh=NWFtcWt5NWFxbXNj",{"icon":969,"name":970,"url":971},"/dummy-images/linkedin.svg","Linkedin","https://www.linkedin.com/company/ardshinbank-cjsc/",{"icon":973,"name":974,"url":975},"/dummy-images/youtube.svg","Youtube","https://youtube.com/@ArdshinbankCJSC?si=S0UtJzq8Zx435Yh7",{"icon":977,"name":978,"url":979},"/dummy-images/telegram.svg","Telegram","https://t.me/ardshinbank",{"partnersLogos":981,"bottomText":997},[982,985,988,991,994],{"icon":983,"url":984},"/dummy-images/footer-partner.png","https://www.cba.am/EN/SitePages/Default.aspx",{"icon":986,"url":987},"/dummy-images/footer-partner2.png","https://www.adgf.am/",{"icon":989,"url":990},"/dummy-images/footer-partner3.png","https://www.abcfinance.am/",{"icon":992,"url":993},"/dummy-images/footer-partner4.png","https://www.fininfo.am/",{"icon":995,"url":996},"/dummy-images/footer-partner5.png","https://fsm.am/","Ուշադրություն.\u003Cdiv>\u003Cbr>\u003C/div>\u003Cdiv>\u003Cdiv>Հայերեն, ռուսերեն և անգլերեն լեզուներով հրապարակված տեղեկատվության միջև անհամապատասխանության դեպքում խնդրում ենք առաջնորդվել հայերեն տարբերակով:\u003C/div>\u003Cdiv>\u003Cbr>\u003C/div>\u003Cdiv>Բանկը պատասխանատվություն չի կրում իր կայքում հղումներով նշված այլ կայքերի բովանդակության ստույգ և արժանահավատ լինելու, այնտեղ տեղադրված գովազդների, ինչպես նաև այդ կայքերում տեղադրված տեղեկատվության օգտագործման հնարավոր հետևանքների համար:\u003C/div>\u003C/div>\u003Cdiv>\u003Cbr>\u003C/div>\u003Cdiv>\u003Cdiv>Արտարժույթի փոխարկման պայմաններին ծանոթացեք կայքի \u003Ca href=\"https://www.ardshinbank.am/for_you/Artarjuyti-poxanakum?lang=hy\">\u003Cu>Արտարժույթի փոխանակում\u003C/u>\u003C/a> բաժնում: \u003C/div>\u003C/div>\u003Cdiv>\u003Cbr>\u003C/div>\u003Cdiv> Արդշինբանկը վերահսկվում է ՀՀ Կենտրոնական բանկի կողմից։\u003C/div>",{"image":999,"title":549,"content":1000,"stores":1001},"{{serverFilesUrl}}images/tab-bar/App Mobail 15pro new size-c1363eed-96a5-409a-a8c1-779257443d70.png","Ներբեռնեք մեր պաշտոնական հավելվածները",[1002,1006],{"text":1003,"url":1004,"image":1005},"Google Play","https://play.google.com/store/apps/details?id=am.lsoft.mobilebanking.ashb","/dummy-images/google-play.svg",{"text":1007,"url":1008,"image":1009},"App Store","https://apps.apple.com/am/app/ardshinbank/id1237344603","/dummy-images/app-store.svg",{"isFilled":32,"data":1011},{"upperHintText":1012,"description":1013,"pageUpdated":1017,"firstCol":1018,"secondCol":1039,"thirdCol":1061,"fourthCol":1072,"fifthCol":1074,"bottomRow":1082,"mobileBanking":1090}," © 2024 ЗАО «АРДШИНБАНК». Все права защищены",[1014,1015,1016],"Республика Армения, 0015 Ереван, Григора Лусаворича 13","Тел. (+37412) 22 22 22","E-mail:ashb@ardshinbank.am "," Страница обновлена` ",{"title":1019,"menuItems":1020},"ПОЧЕМУ АРДШИНБАНК",[1021,1023,1025,1027,1029,1031,1033,1035,1037],{"name":1022,"url":886},"О нас",{"name":1024,"url":889},"Совет банка",{"name":1026,"url":892},"Правление банка",{"name":1028,"url":895}," Акционеры",{"name":1030,"url":898},"Структура банка",{"name":1032,"url":901},"Основные факты",{"name":1034,"url":904},"Карьера",{"name":1036,"url":907},"Рейтинги банка",{"name":1038,"url":910},"Отчеты ",{"title":1040,"menuItems":1041},"Клиентам",[1042,1044,1046,1048,1051,1053,1055,1057,1059],{"name":1043,"url":916}," Руководство по безопасности",{"name":1045,"url":919},"Регулирование",{"name":1047,"url":922},"Общие условия предоставления банковских услуг",{"name":1049,"url":1050}," Права клиентов","/for_you/Hachaxordneri_iravunqner\t",{"name":1052,"url":928},"Полезные ссылки",{"name":1054,"url":931},"Часто задаваемые вопросы",{"name":1056,"url":934},"Политика соблюдения конфиденциальности",{"name":1058,"url":937},"Обратная связь ",{"name":1060,"url":940},"Социальные и экологические риски",{"title":1062,"menuItems":1063},"Еще",[1064,1066,1068,1070],{"name":1065,"url":945},"Новости",{"name":1067,"url":948},"Объявления",{"name":1069,"url":951},"Конкурсы",{"name":1071,"url":954}," Отчуждаемое имущество",{"title":57,"menuItems":1073},[],{"title":1075,"menuItems":1076},"Социальные сети",[1077,1078,1079,1080,1081],{"icon":961,"name":962,"url":963},{"icon":965,"name":966,"url":967},{"icon":969,"name":970,"url":971},{"icon":973,"name":974,"url":975},{"icon":977,"name":978,"url":979},{"partnersLogos":1083,"bottomText":1089},[1084,1085,1086,1087,1088],{"icon":983,"url":984},{"icon":986,"url":987},{"icon":989,"url":990},{"icon":992,"url":993},{"icon":995,"url":996},"\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">ВНИМАНИЕ! \u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">\u003Cbr>\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">В случае\nнесоответствия информации на армянском, русском и английском языках, просим\nруководствоваться армянской версией. \u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">\u003Cbr>\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">Банк не несет ответственность за\nдостоверность и правдивость информации и рекламных материалов, размещенных на\nсайтах представленных компаний, а также за возможные последствия использования\nинформации, ставшей доступной через ссылки на нашем сайте.\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">\u003Cbr>\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cfont face=\"GHEA Grapalat\">С условиями обмена\nиностранной валюты ознакомьтесь в разделе сайта «\u003Ca href=\"https://www.ardshinbank.am/for_you/Artarjuyti-poxanakum%09?lang=ru\">\u003Cu>Обмен иностранной валюты\u003C/u>\u003C/a>».\u003C/font>\u003Cbr>\u003Cfont face=\"GHEA Grapalat\">\u003Co:p>\u003C/o:p>\u003C/font>\u003C/p>",{"image":1091,"title":1092,"content":1093,"stores":1094},"{{serverFilesUrl}}images/tab-bar/App Mobail 15pro new size-9857c8b8-ac13-4e9b-a19a-ae798471effe.png"," Мобильный банкинг"," Загрузите наши официальные приложения",[1095,1097],{"text":1003,"url":1096,"image":1005},"https://play.google.com/store/apps/details?id=am.lsoft.mobilebanking.ashb&hl=en",{"text":1007,"url":1008,"image":1009},{"isFilled":32,"data":1099},{"upperHintText":875,"description":1100,"pageUpdated":1104,"firstCol":1105,"secondCol":1126,"thirdCol":1147,"fourthCol":1157,"fifthCol":1159,"bottomRow":1167,"mobileBanking":1175},[1101,1102,1103],"13 Grigor Lusavorich, Yerevan 0015, RA","Tel. (+37412) 22 22 22","E-mail: ashb@ardshinbank.am"," The page has been updated ",{"title":1106,"menuItems":1107},"Why Ardshinbank",[1108,1110,1112,1114,1116,1118,1120,1122,1124],{"name":1109,"url":886},"About us",{"name":1111,"url":889},"Supervisory board",{"name":1113,"url":892},"Leadership",{"name":1115,"url":895},"Shareholders",{"name":1117,"url":898},"Structure of the bank",{"name":1119,"url":901},"Essential Information",{"name":1121,"url":904},"Career",{"name":1123,"url":907},"Ratings of the Bank",{"name":1125,"url":910},"Reports",{"title":1127,"menuItems":1128},"FOR CUSTOMERS",[1129,1131,1133,1135,1137,1139,1141,1143,1145],{"name":1130,"url":916},"Safety Guide",{"name":1132,"url":919},"Regulation",{"name":1134,"url":922},"General conditions for the provision of banking services",{"name":1136,"url":1050},"Client rights",{"name":1138,"url":928},"Useful links",{"name":1140,"url":931},"FAQ",{"name":1142,"url":934},"Privacy Policy",{"name":1144,"url":937},"Contact Us ",{"name":1146,"url":940},"Social and environmental risks",{"title":245,"menuItems":1148},[1149,1151,1153,1155],{"name":1150,"url":945},"News",{"name":1152,"url":948},"Announcements",{"name":1154,"url":951},"Competitions",{"name":1156,"url":954},"Alienated Property",{"title":57,"menuItems":1158},[],{"title":1160,"menuItems":1161},"SOCIAL MEDIA",[1162,1163,1164,1165,1166],{"icon":961,"name":962,"url":963},{"icon":965,"name":966,"url":967},{"icon":969,"name":970,"url":971},{"icon":973,"name":974,"url":975},{"icon":977,"name":978,"url":979},{"partnersLogos":1168,"bottomText":1174},[1169,1170,1171,1172,1173],{"icon":983,"url":984},{"icon":986,"url":987},{"icon":989,"url":990},{"icon":992,"url":993},{"icon":995,"url":996},"\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">ATTENTION! \u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">\u003Cbr>\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">In the\nevent of any discrepancies in the published information between Armenian,\nRussian, and English versions, the Armenian version shall prevail. \u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">\u003Cbr>\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">The Bank\nassumes no responsibility for the accuracy and reliability of the mentioned\ncompany websites and advertisements placed on them, nor for any potential\nconsequences arising from the use of such information.\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">\u003Cbr>\u003C/span>\u003C/p>\u003Cp class=\"MsoNormal\">\u003Cspan style=\"font-family:"GHEA Grapalat"\">Terms and conditions for\ncurrency exchange please find in the \"\u003Ca href=\"https://www.ardshinbank.am/for_you/Artarjuyti-poxanakum%09?lang=en\">Currency Exchange\u003C/a>\" section.\u003C/span>\u003C/p>",{"image":1176,"title":1177,"content":1178,"stores":1179},"{{serverFilesUrl}}images/tab-bar/App Mobail 15pro new size-f871172d-b623-4a16-88b2-f956caa1bad3.png"," Mobile banking"," Download our Mobile Application",[1180,1181],{"text":1003,"url":1096,"image":1005},{"text":1007,"url":1008,"image":1009},null,"2024-02-18T09:02:28.393Z","2024-10-31T09:34:29.392Z",["Ref",1186],["Reactive",1187],{"_id":1188,"page":51,"content":1189,"isPublished":5,"createdAt":1359,"updatedAt":1360,"__v":26,"publishDate":1360},"671791afb66614f74a9f3fe6",[1190,1213,1245,1274,1294,1302,1325,1348],{"id":73,"name":74,"props":1191},{"659bda51d10aaeb6566397f8":1192,"659bed4cd10aaeb6566399eb":1199,"659fbf1ad10aaeb65663a538":1206},{"isFilled":5,"data":1193},{"sliderData":1194},[1195],{"title":80,"content":81,"image1":82,"image2":83,"cta":1196},[1197,1198],{"title":86,"link":87},{"title":89,"link":90},{"isFilled":5,"data":1200},{"sliderData":1201},[1202],{"title":95,"content":96,"image1":82,"image2":97,"cta":1203},[1204,1205],{"title":100,"link":87},{"title":102,"link":90},{"isFilled":5,"data":1207},{"sliderData":1208},[1209],{"title":107,"content":108,"image1":82,"image2":109,"cta":1210},[1211,1212],{"title":112,"link":87},{"title":114,"link":90},{"id":116,"name":117,"props":1214},{"659bda51d10aaeb6566397f8":1215,"659bed4cd10aaeb6566399eb":1225,"659fbf1ad10aaeb65663a538":1235},{"isFilled":5,"data":1216},{"tabsData":1217},[1218,1219,1220,1221,1222,1223,1224],{"icon":123,"title":124,"number":57,"ctaURL":125},{"icon":127,"title":128,"number":57,"ctaURL":129},{"icon":131,"title":132,"number":57,"ctaURL":133},{"icon":135,"title":136,"number":57,"ctaURL":137},{"icon":139,"title":140,"number":57,"ctaURL":141},{"icon":143,"title":144,"number":57,"ctaURL":145},{"icon":147,"title":148,"number":57,"ctaURL":149},{"isFilled":5,"data":1226},{"tabsData":1227},[1228,1229,1230,1231,1232,1233,1234],{"icon":123,"title":154,"number":57,"ctaURL":125},{"icon":127,"title":156,"number":57,"ctaURL":129},{"icon":131,"title":158,"number":57,"ctaURL":133},{"icon":135,"title":160,"number":57,"ctaURL":137},{"icon":139,"title":162,"number":57,"ctaURL":141},{"icon":143,"title":164,"number":57,"ctaURL":145},{"icon":147,"title":166,"number":57,"ctaURL":149},{"isFilled":5,"data":1236},{"tabsData":1237},[1238,1239,1240,1241,1242,1243,1244],{"icon":123,"title":171,"number":57,"ctaURL":125},{"icon":127,"title":173,"number":57,"ctaURL":129},{"icon":131,"title":175,"number":57,"ctaURL":133},{"icon":135,"title":177,"number":57,"ctaURL":137},{"icon":139,"title":179,"number":57,"ctaURL":141},{"icon":181,"title":182,"number":57,"ctaURL":145},{"icon":147,"title":184,"number":57,"ctaURL":149},{"id":186,"name":187,"props":1246},{"659bda51d10aaeb6566397f8":1247,"659bed4cd10aaeb6566399eb":1256,"659fbf1ad10aaeb65663a538":1265},{"isFilled":5,"data":1248},{"items":1249},{"first":1250,"second":1251,"third":1253,"fourth":1254,"fifth":1255},{"icon":193,"title":194,"ctaURL":195},{"image":197,"title":198,"content":199,"bannerContent":1252,"backgroundColor":203,"ctaURL":204,"ctaText":205},[201,202],{"title":57,"backgroundImage":207,"ctaURL":208,"ctaText":57},{"icon":210,"title":211,"ctaURL":129},{"icon":213,"title":214,"backgroundColor":215,"ctaURL":216},{"isFilled":5,"data":1257},{"items":1258},{"first":1259,"second":1260,"third":1262,"fourth":1263,"fifth":1264},{"icon":193,"title":221,"ctaURL":195},{"image":197,"title":223,"content":224,"bannerContent":1261,"backgroundColor":203,"ctaURL":204,"ctaText":228},[226,227],{"title":57,"backgroundImage":207,"ctaURL":208,"ctaText":57},{"icon":210,"title":231,"ctaURL":129},{"icon":213,"title":233,"backgroundColor":215,"ctaURL":216},{"isFilled":32,"data":1266},{"items":1267},{"first":1268,"second":1269,"third":1271,"fourth":1272,"fifth":1273},{"icon":193,"title":238,"ctaURL":195},{"image":197,"title":240,"content":241,"bannerContent":1270,"backgroundColor":203,"ctaURL":204,"ctaText":245},[243,244],{"title":57,"backgroundImage":207,"ctaURL":208,"ctaText":57},{"icon":210,"title":248,"ctaURL":129},{"icon":213,"title":250,"backgroundColor":215,"ctaURL":216},{"id":252,"name":253,"props":1275},{"659bda51d10aaeb6566397f8":1276,"659bed4cd10aaeb6566399eb":1282,"659fbf1ad10aaeb65663a538":1288},{"isFilled":32,"data":1277},{"title":257,"info":1278,"hint":268,"image":269,"ctaText1":89,"ctaURL1":270,"ctaText2":57,"ctaURL2":270},[1279,1280,1281],{"title":260,"text":261},{"title":263,"text":264},{"title":266,"text":267},{"isFilled":32,"data":1283},{"title":257,"info":1284,"hint":281,"image":282,"ctaText1":102,"ctaURL1":270,"ctaText2":57,"ctaURL2":57},[1285,1286,1287],{"title":275,"text":261},{"title":277,"text":278},{"title":280,"text":267},{"isFilled":32,"data":1289},{"title":257,"info":1290,"hint":293,"image":294,"ctaText1":245,"ctaURL1":270,"ctaText2":57,"ctaURL2":57},[1291,1292,1293],{"title":287,"text":261},{"title":289,"text":290},{"title":292,"text":267},{"id":296,"name":297,"props":1295},{"659bda51d10aaeb6566397f8":1296,"659bed4cd10aaeb6566399eb":1298,"659fbf1ad10aaeb65663a538":1300},{"isFilled":32,"data":1297},{"content":57},{"isFilled":32,"data":1299},{"content":57},{"isFilled":32,"data":1301},{"content":57},{"id":306,"name":307,"props":1303},{"659bda51d10aaeb6566397f8":1304,"659bed4cd10aaeb6566399eb":1311,"659fbf1ad10aaeb65663a538":1318},{"isFilled":5,"data":1305},{"sliderData":1306},[1307],{"title":313,"content":314,"image":315,"backgroundImage":316,"cta":1308},[1309,1310],{"title":319,"link":87},{"title":57,"link":57},{"isFilled":32,"data":1312},{"sliderData":1313},[1314],{"title":325,"content":326,"image":315,"backgroundImage":316,"cta":1315},[1316,1317],{"title":329,"link":87},{"title":57,"link":57},{"isFilled":32,"data":1319},{"sliderData":1320},[1321],{"title":335,"content":336,"image":315,"backgroundImage":316,"cta":1322},[1323,1324],{"title":339,"link":87},{"title":57,"link":57},{"id":342,"name":307,"props":1326},{"659bda51d10aaeb6566397f8":1327,"659bed4cd10aaeb6566399eb":1334,"659fbf1ad10aaeb65663a538":1341},{"isFilled":5,"data":1328},{"sliderData":1329},[1330],{"title":348,"content":349,"image":350,"backgroundImage":351,"cta":1331},[1332,1333],{"title":89,"link":141},{"title":57,"link":57},{"isFilled":32,"data":1335},{"sliderData":1336},[1337],{"title":359,"content":360,"image":361,"backgroundImage":362,"cta":1338},[1339,1340],{"title":102,"link":141},{"title":57,"link":57},{"isFilled":32,"data":1342},{"sliderData":1343},[1344],{"title":370,"content":371,"image":361,"backgroundImage":362,"cta":1345},[1346,1347],{"title":245,"link":141},{"title":57,"link":57},{"id":376,"name":377,"props":1349},{"659bda51d10aaeb6566397f8":1350,"659bed4cd10aaeb6566399eb":1353,"659fbf1ad10aaeb65663a538":1356},{"isFilled":5,"data":1351},{"currencyTitle":381,"goldTitle":382,"cashTitle":383,"cashlessTitle":384,"headings":1352,"goldQuantityText":392,"updatedAt":393,"currencyCalculatorTitle":394,"have":395,"willGet":396},{"type":386,"buy":387,"sell":388,"cb":389,"quantity":390,"rate":391},{"isFilled":5,"data":1354},{"currencyTitle":399,"goldTitle":400,"cashTitle":401,"cashlessTitle":402,"headings":1355,"goldQuantityText":392,"updatedAt":408,"currencyCalculatorTitle":409,"have":410,"willGet":411},{"type":404,"buy":405,"sell":406,"cb":407,"quantity":390,"rate":391},{"isFilled":5,"data":1357},{"currencyTitle":414,"goldTitle":415,"cashTitle":416,"cashlessTitle":417,"headings":1358,"goldQuantityText":392,"updatedAt":423,"currencyCalculatorTitle":424,"have":425,"willGet":426},{"type":419,"buy":420,"sell":421,"cb":422,"quantity":390,"rate":391},"2024-10-22T11:51:11.629Z","2024-10-22T11:51:24.875Z",["Ref",1362],["Reactive",1363],[51],{"layoutComponents":1365,"layoutComponentsByNames":1368},["Ref",1366],["Reactive",1367],[],["Ref",1369],["Reactive",1370],{"TopHeader":1371},{"_id":1372,"name":1373,"type":1374,"isGlobal":5,"__v":26,"createdAt":870,"updatedAt":1375,"data":1376},"6581866cd698e3b5f1293a8f","TopHeader","topHeader","2024-10-22T13:55:51.426Z",{"659bda51d10aaeb6566397f8":1377,"659bed4cd10aaeb6566399eb":1400,"659fbf1ad10aaeb65663a538":1415},{"isFilled":32,"data":1378},{"leftColumn":1379,"rightColumn":1385,"search":1397},[1380,1382],{"name":1381,"url":53},"Ձեզ համար",{"name":1383,"url":1384},"Ձեր բիզնեսի համար","/for-your-business/business",[1386,1387,1390,1393],{"name":57,"url":57},{"name":1388,"url":1389},"Մասնաճյուղեր և բանկոմատներ","/Information/branch-atm",{"name":1391,"url":1392},"Հերթի ամրագրում","/for-you/herti-amragrum",{"name":1394,"url":1395,"type":1396},"+374 12 222222","tel:+37412222222","phone",{"searchPlaceholder":1398,"searchNoResult":1399,"searchHint":57},"Search","No Result",{"isFilled":32,"data":1401},{"leftColumn":1402,"rightColumn":1407,"search":1414},[1403,1405],{"name":1404,"url":53},"Для вас",{"name":1406,"url":1384},"Для вашего бизнеса",[1408,1409,1411,1413],{"name":57,"url":57},{"name":1410,"url":1389},"Филиалы и банкоматы",{"name":1412,"url":1392},"Услуга бронирования очереди",{"name":1394,"url":1395,"type":1396},{"searchPlaceholder":1398,"searchNoResult":1399,"searchHint":57},{"isFilled":32,"data":1416},{"leftColumn":1417,"rightColumn":1421,"search":1428},[1418,1419],{"name":429,"url":53},{"name":1420,"url":1384},"For Your business",[1422,1423,1425,1427],{"name":57,"url":57},{"name":1424,"url":1389},"Branches and ATMs",{"name":1426,"url":1392},"Appointment",{"name":1394,"url":1395,"type":1396},{"searchPlaceholder":1398,"searchNoResult":1399,"searchHint":57},{"selectedObject":1430,"selectedElementSettings":1432,"selectedObjectParent":1433,"selectedObjectInstance":1434},["EmptyRef",1431],"_",["EmptyRef",1431],["EmptyRef",1431],["EmptyRef",1431],{"isOpened":1436,"top":1437,"left":1438,"menuContainer":1439,"clipBoardHaveElement":1440},["EmptyRef",46],["EmptyRef",12],["EmptyRef",12],["EmptyRef",10],["EmptyRef",46]]
     </script>

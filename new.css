@@ -2,12 +2,27 @@
   font-size: 18px;
   margin-bottom: 30px;
 }
+@media (min-width: 767.98px) {
+  .second-sect {
+    margin-top: 1400px;
+  }
+}
 @media (min-width: 991px) {
   .best__members {
     display: flex;
     align-items: center;
     gap: 10px;
     justify-content: space-between;
+  }
+
+  .second-sect {
+    margin-top: 300px;
+  }
+
+  .best__member {
+    border: 1px solid #555555;
+    border-radius: 10px;
+    padding: 50px;
   }
 }
 .best__member {
@@ -34,6 +49,10 @@
   border: 1px solid #000;
   padding: 10px;
   border-radius: 10px;
+}
+
+a {
+  cursor: pointer !important;
 }
 
 /* Container for the buttons */
