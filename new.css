@@ -2,6 +2,14 @@
   font-size: 18px;
   margin-bottom: 30px;
 }
+@media (min-width: 991px) {
+  .best__members {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+  }
+}
 .best__member {
   margin-bottom: 30px;
 }
@@ -26,4 +34,59 @@
   border: 1px solid #000;
   padding: 10px;
   border-radius: 10px;
+}
+
+/* Container for the buttons */
+.button-container {
+  display: flex;
+  gap: 12px;
+}
+
+/* Gradient button styling */
+.gradient-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  border-radius: 4px;
+  height: 48px;
+  text-decoration: none;
+}
+
+.gradient-button .icon {
+  margin-left: 8px;
+}
+
+/* Outline button styling */
+.outline-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  height: 48px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.outline-button .icon {
+  margin-left: 8px;
+}
+
+/* Hover effects */
+.gradient-button:hover {
+  opacity: 0.9;
+}
+
+.outline-button:hover {
+  background-color: #007bff;
+  color: white;
 }
