@@ -128,3 +128,53 @@ a {
   font-weight: 700;
   color: red;
 }
+
+.popup-message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+}
+
+/* Стиль для видимого состояния */
+.popup-message-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Стиль для окна сообщения */
+.popup-message-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль текста */
+.popup-message-content p {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 0 15px;
+}
+
+/* Стиль кнопки */
+.popup-message-close {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}

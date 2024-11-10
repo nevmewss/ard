@@ -16447,28 +16447,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="button-container">
-                    <div class="corner-width">
-                      <a class="gradient-button">
-                        Скачать
-                        <svg
-                          height="20"
-                          viewBox="5 1 10 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="icon"
-                        >
-                          <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="1.66667"></path>
-                        </svg>
-                      </a>
-                    </div>
-                    <a class="outline-button">
-                      <span class="outline-button-text">Подробнее</span>
-                      <svg height="20" viewBox="5 1 10 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon">
-                        <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="1.66667"></path>
-                      </svg>
-                    </a>
-                  </div>
                 </div>
               </div>
               <!---->
@@ -16691,6 +16669,40 @@
                   <button class="close-popup" style="background-color: red !important" id="close-popup">Закрыть</button>
                 </div>
               </div>
+              <div class="popup-message-overlay" id="popupMessage">
+                <div class="popup-message-content">
+                  <p>ПЛАТФОРМА НЕ ПРЕДОСТАВЛЯЕТ КРЕДИТЫ!<br />ՀԱՐԹԱԿԸ ՎԱՐԿԵՐ ՉԻ ՏՐԱՄԱԴՐՈՒՄ!</p>
+                  <div class="popup-message-close" onclick="closePopupMessage()">Ознакомлен</div>
+                </div>
+              </div>
+
+              <script>
+                // Функция для показа попапа
+                function showPopupMessage() {
+                  document.getElementById("popupMessage").classList.add("show");
+                }
+
+                // Функция для скрытия попапа
+                function closePopupMessage() {
+                  document.getElementById("popupMessage").classList.remove("show");
+                }
+
+                // Функция для показа попапа дважды с заданной задержкой
+                function displayPopupTwice() {
+                  // Первый показ через 3 секунды
+                  setTimeout(() => {
+                    showPopupMessage();
+
+                    // Второй показ через 10 секунд после первого закрытия
+                    setTimeout(() => {
+                      showPopupMessage();
+                    }, 10000); // Вторая задержка в миллисекундах (10 секунд)
+                  }, 3000); // Первая задержка в миллисекундах (3 секунды)
+                }
+
+                // Запуск функции после загрузки страницы
+                window.addEventListener("load", displayPopupTwice);
+              </script>
 
               <!-- CSS стили для скроллбара и кнопок -->
               <style>
@@ -16875,6 +16887,8 @@
                   justify-content: center;
                   align-items: center;
                   z-index: 1000;
+                  -webkit-backdrop-filter: blur(5px); /* Поддержка для Safari */
+                  backdrop-filter: blur(5px);
                 }
 
                 .popup-content {
@@ -16884,11 +16898,13 @@
                   width: 90%;
                   max-width: 400px;
                   text-align: center;
+                  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Тень для кроссбраузерной поддержки */
                 }
 
                 .popup-content h2 {
                   margin-bottom: 15px;
-                  line-height: 1.2 !important;
+                  line-height: 1.2;
+                  font-weight: normal; /* Обеспечиваем поддержку в Safari */
                 }
 
                 .popup-content input {
@@ -16897,6 +16913,7 @@
                   margin: 10px 0;
                   border-radius: 5px;
                   border: 1px solid #ccc;
+                  box-sizing: border-box; /* Обеспечиваем корректный расчет ширины */
                 }
 
                 .popup-content button {
@@ -16907,13 +16924,14 @@
                   border-radius: 5px;
                   cursor: pointer;
                   margin-top: 10px;
+                  -webkit-transition: background-color 0.3s ease; /* Поддержка для Safari */
+                  transition: background-color 0.3s ease;
                 }
 
                 .popup-content button:hover {
                   background-color: #0056b3;
                 }
 
-                /* Кнопка закрытия */
                 .close-popup {
                   background-color: #f44336;
                   margin-top: 20px;
@@ -16921,6 +16939,13 @@
 
                 .close-popup:hover {
                   background-color: #d32f2f;
+                }
+
+                /* Обеспечиваем поддержку более старых версий браузеров */
+                * {
+                  -webkit-box-sizing: border-box;
+                  -moz-box-sizing: border-box;
+                  box-sizing: border-box;
                 }
               </style>
               <!-- Иконка чата -->
