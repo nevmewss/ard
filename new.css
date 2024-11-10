@@ -148,6 +148,7 @@ a {
 .popup-message-overlay.show {
   visibility: visible;
   opacity: 1;
+  z-index: 300000000000;
 }
 
 /* Стиль для окна сообщения */
